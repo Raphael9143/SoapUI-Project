@@ -23,7 +23,7 @@
   "imageUrl": "string",
   "salary": 1000,
   "position": "WAITER"
-}</con:request><con:originalUri>http://34.87.113.245/api/v1/foods</con:originalUri><con:assertion type="GroovyScriptAssertion" id="bfda3d04-49d7-451c-8810-75fa5a0600f1" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+}</con:request><con:originalUri>http://34.87.113.245/api/v1/foods</con:originalUri><con:assertion type="GroovyScriptAssertion" id="bfda3d04-49d7-451c-8810-75fa5a0600f1" name="checkAge"><con:configuration><scriptText>import groovy.json.JsonSlurper
 import java.time.LocalDate
 import java.time.Period
 import java.time.format.DateTimeFormatter
@@ -49,4 +49,25 @@ if (dobString) {
 } else {
     assert false : "Không tìm thấy trường dob"
 }
-</scriptText></con:configuration></con:assertion><con:assertion type="Simple Contains" id="47e8ee58-f1c4-4ef5-9007-3c9ed40fdc44" name="position contains"><con:configuration><token>"CASHIER"</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="f9f53cd0-3c40-4bbb-b18e-b722a66f7ba0" name="Contains"><con:configuration><token>"phoneNumber": "^0\d{9}$"</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="7922d5ac-ca16-4f65-ba65-62abf6fb8a32" name="checkPhoneNumber"><con:configuration><scriptText>import groovy.json.JsonSlurper
+import java.time.LocalDate
+import java.time.Period
+import java.time.format.DateTimeFormatter
+
+// Parse JSON response
+def response = messageExchange.response.responseContent
+def json = new JsonSlurper().parseText(response)
+
+def phoneNumber = json.phoneNumber
+
+// Kiểm tra regex
+assert phoneNumber ==~ /^0\d{9}$/ : "Phone number must be 10 digits and start with 0"
+</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="37b6d98d-1e6f-4451-afb2-bc5700a8a206" name="checkValidFullName"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+// Parse JSON response
+def response = messageExchange.response.responseContent
+def json = new JsonSlurper().parseText(response)
+
+def fullName = json.fullName
+
+assert fullName?.trim(): "fullName must not be empty or blank"</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
