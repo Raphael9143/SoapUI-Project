@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="19941ba1-2090-454d-8429-d923a7817d50" activeEnvironment="Default" name="QRest" resourceRoot="" soapui-version="5.8.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="a5869dbc-52cb-4d09-a9a0-4647e8da549e" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://34.87.113.245:18080" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://34.87.113.245:18080</con:endpoint></con:endpoints><con:resource name="V1" path="/api/v1/staffs" id="c7b7abaa-edbf-40e5-ad53-f6e5f09e6e19"><con:settings/><con:parameters/><con:method name="V1 1" id="c58315ce-7dae-478e-939a-e2c99054ca84" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200 201</con:status><con:params/><con:element>Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="post user" id="e9177521-a013-4032-aa9c-7a9fdff3fc98" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://34.87.113.245:18080</con:endpoint><con:request>{
+  "fullName": "string",
+  "dob": "2025-04-22",
+  "phoneNumber": "string",
+  "address": "string",
+  "imageUrl": "string",
+  "salary": 0,
+  "position": "WAITER"
+}</con:request><con:originalUri>http://34.87.113.245/api/v1/foods</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request><con:request name="get users" id="13b5b651-135a-4cd9-b4ac-31bc7f63ec4f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://34.87.113.245:18080</con:endpoint><con:request/><con:originalUri>http://34.87.113.245/api/v1/users</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="01076e1c-7319-4424-9354-2362b1e86d15" name="user_test_suite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="57f24b14-6010-4eb3-bfbc-8b8539cb7f85" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="post user testcase" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="get user" id="42c67c32-1fc9-4c68-b55e-f63b7b18c637"><con:settings/><con:config service="http://34.87.113.245:18080" resourcePath="/api/v1/staffs" methodName="V1 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="get user" id="e9177521-a013-4032-aa9c-7a9fdff3fc98" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://34.87.113.245:18080</con:endpoint><con:request>{
+  "fullName": "string",
+  "dob": "2025-04-22",
+  "phoneNumber": "string",
+  "address": "string",
+  "imageUrl": "string",
+  "salary": 0,
+  "position": "WAITER"
+}</con:request><con:originalUri>http://34.87.113.245/api/v1/foods</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="add user" id="0fd088a5-a96d-45d1-bcc0-13b04a4aae0d"><con:settings/><con:config service="http://34.87.113.245:18080" resourcePath="/api/v1/staffs" methodName="V1 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="add user" id="e9177521-a013-4032-aa9c-7a9fdff3fc98" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://34.87.113.245:18080</con:endpoint><con:request>{
+  "fullName": "Nguyen Hoang Anh",
+  "dob": "2007-04-22",
+  "phoneNumber": "0977777777",
+  "address": "Ha Noi",
+  "imageUrl": "string",
+  "salary": 1000,
+  "position": "WAITER"
+}</con:request><con:originalUri>http://34.87.113.245/api/v1/foods</con:originalUri><con:assertion type="GroovyScriptAssertion" id="bfda3d04-49d7-451c-8810-75fa5a0600f1" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+import java.time.LocalDate
+import java.time.Period
+import java.time.format.DateTimeFormatter
+
+// Parse JSON response
+def response = messageExchange.response.responseContent
+def json = new JsonSlurper().parseText(response)
+
+// Lấy trực tiếp dob
+def dobString = json.dob
+
+if (dobString) {
+    // Chuyển chuỗi DOB thành LocalDate
+    def formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    def dob = LocalDate.parse(dobString, formatter)
+    def today = LocalDate.now()
+
+    // Tính tuổi
+    def age = Period.between(dob, today).years
+
+    // Kiểm tra tuổi phải >= 18
+    assert age >= 18 : "User với dob ${dobString} chưa đủ 18 tuổi (mới ${age} tuổi)"
+} else {
+    assert false : "Không tìm thấy trường dob"
+}
+</scriptText></con:configuration></con:assertion><con:assertion type="Simple Contains" id="47e8ee58-f1c4-4ef5-9007-3c9ed40fdc44" name="position contains"><con:configuration><token>"CASHIER"</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="f9f53cd0-3c40-4bbb-b18e-b722a66f7ba0" name="Contains"><con:configuration><token>"phoneNumber": "^0\d{9}$"</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
