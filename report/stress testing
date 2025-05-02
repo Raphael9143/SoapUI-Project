@@ -1,0 +1,4 @@
+Test Step,min,max,avg,last,cnt,tps,bytes,bps,err,rat
+get categories,48,252,55.2,70,11018,103.24,20860,61533,0,0
+get category by id,47,208,55.28,54,11018,103.24,3255,9601,0,0
+TestCase:,95,460,110.48,124,11018,103.24,24115,71135,0,0
