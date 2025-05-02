@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ba5dfc20-9cbf-4d92-baab-432f717e28a2" activeEnvironment="Default" name="SOAP" resourceRoot="" soapui-version="5.8.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="81a29472-c31e-4310-b0c1-6344a8c9f53b" wsaVersion="NONE" name="MoviesPortSoap11" type="wsdl" bindingName="{http://jonclarke.dev/movies/web-service}MoviesPortSoap11" soapVersion="1_1" anonymous="optional" definition="file:/C:/Dev/Project/Testing/movies.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Dev/Project/Testing/movies.wsdl"><con:part><con:url>file:/C:/Dev/Project/Testing/movies.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://jonclarke.dev/movies/web-service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://jonclarke.dev/movies/web-service" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://jonclarke.dev/movies/web-service">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://jonclarke.dev/movies/web-service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="listMoviesRequest">
+        <xs:complexType>
+          <xs:sequence></xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="listMoviesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="movies" type="tns:Movie"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getMovieRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getMovieResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="0" name="movie" type="tns:Movie"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addMovieRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="0" name="movie" type="tns:newMovie"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addMovieResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="0" name="movie" type="tns:Movie"/>
+            <xs:element name="message" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateMovieRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="0" name="movie" type="tns:Movie"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateMovieResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="0" name="movie" type="tns:Movie"/>
+            <xs:element name="message" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteMovieRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteMovieResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="0" name="movie" type="tns:Movie"/>
+            <xs:element name="message" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="newMovie">
+        <xs:sequence>
+          <xs:element name="title" type="xs:string"/>
+          <xs:element name="description" type="xs:string"/>
+          <xs:element name="releaseDate" type="xs:dateTime"/>
+          <xs:element name="availableOnDvd" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Movie">
+        <xs:sequence>
+          <xs:element name="id" type="xs:int"/>
+          <xs:element name="title" type="xs:string"/>
+          <xs:element name="description" type="xs:string"/>
+          <xs:element name="releaseDate" type="xs:dateTime"/>
+          <xs:element name="availableOnDvd" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getMovieResponse">
+    <wsdl:part element="tns:getMovieResponse" name="getMovieResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateMovieResponse">
+    <wsdl:part element="tns:updateMovieResponse" name="updateMovieResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteMovieRequest">
+    <wsdl:part element="tns:deleteMovieRequest" name="deleteMovieRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addMovieRequest">
+    <wsdl:part element="tns:addMovieRequest" name="addMovieRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateMovieRequest">
+    <wsdl:part element="tns:updateMovieRequest" name="updateMovieRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addMovieResponse">
+    <wsdl:part element="tns:addMovieResponse" name="addMovieResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listMoviesRequest">
+    <wsdl:part element="tns:listMoviesRequest" name="listMoviesRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listMoviesResponse">
+    <wsdl:part element="tns:listMoviesResponse" name="listMoviesResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMovieRequest">
+    <wsdl:part element="tns:getMovieRequest" name="getMovieRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteMovieResponse">
+    <wsdl:part element="tns:deleteMovieResponse" name="deleteMovieResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="MoviesPort">
+    <wsdl:operation name="getMovie">
+      <wsdl:input message="tns:getMovieRequest" name="getMovieRequest"></wsdl:input>
+      <wsdl:output message="tns:getMovieResponse" name="getMovieResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMovie">
+      <wsdl:input message="tns:updateMovieRequest" name="updateMovieRequest"></wsdl:input>
+      <wsdl:output message="tns:updateMovieResponse" name="updateMovieResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMovie">
+      <wsdl:input message="tns:deleteMovieRequest" name="deleteMovieRequest"></wsdl:input>
+      <wsdl:output message="tns:deleteMovieResponse" name="deleteMovieResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMovie">
+      <wsdl:input message="tns:addMovieRequest" name="addMovieRequest"></wsdl:input>
+      <wsdl:output message="tns:addMovieResponse" name="addMovieResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listMovies">
+      <wsdl:input message="tns:listMoviesRequest" name="listMoviesRequest"></wsdl:input>
+      <wsdl:output message="tns:listMoviesResponse" name="listMoviesResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MoviesPortSoap11" type="tns:MoviesPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getMovie">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getMovieRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMovieResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMovie">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="updateMovieRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateMovieResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMovie">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="deleteMovieRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteMovieResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMovie">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="addMovieRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addMovieResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listMovies">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="listMoviesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listMoviesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MoviesPortService">
+    <wsdl:port binding="tns:MoviesPortSoap11" name="MoviesPortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="47449b76-4c35-48d0-b731-e1651b1aa2f5" isOneWay="false" action="" name="addMovie" bindingOperationName="addMovie" type="Request-Response" outputName="addMovieResponse" inputName="addMovieRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cbb63d19-8493-48ce-b526-07f6d45a2e85" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:addMovieRequest>\r
+         <!--Optional:-->\r
+         <web:movie>\r
+            <web:title>?</web:title>\r
+            <web:description>?</web:description>\r
+            <web:releaseDate>?</web:releaseDate>\r
+            <web:availableOnDvd>?</web:availableOnDvd>\r
+         </web:movie>\r
+      </web:addMovieRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/addMovieRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="34f544f3-424e-41d7-b8ec-4cc53047d78c" isOneWay="false" action="" name="deleteMovie" bindingOperationName="deleteMovie" type="Request-Response" outputName="deleteMovieResponse" inputName="deleteMovieRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="10b26b94-8a67-41de-8f37-6218f0795889" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:deleteMovieRequest>\r
+         <web:id>?</web:id>\r
+      </web:deleteMovieRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/deleteMovieRequest"/></con:call></con:operation><con:operation id="cfc7f01f-a425-48e5-8bba-763fdeb4c4ea" isOneWay="false" action="" name="getMovie" bindingOperationName="getMovie" type="Request-Response" outputName="getMovieResponse" inputName="getMovieRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a37e1f6f-cf64-4dd3-9a30-a24cae6daa63" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:getMovieRequest>\r
+         <web:id>?</web:id>\r
+      </web:getMovieRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/getMovieRequest"/></con:call></con:operation><con:operation id="85caf1d3-3f26-46d8-88d2-30740c43897f" isOneWay="false" action="" name="listMovies" bindingOperationName="listMovies" type="Request-Response" outputName="listMoviesResponse" inputName="listMoviesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0e4a5642-6d54-4476-975b-a8c7e70233f9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:listMoviesRequest/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/listMoviesRequest"/></con:call></con:operation><con:operation id="36e2be82-c1de-4822-be4f-5ba72a1f9fa5" isOneWay="false" action="" name="updateMovie" bindingOperationName="updateMovie" type="Request-Response" outputName="updateMovieResponse" inputName="updateMovieRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e67abade-82be-4588-b262-c1c73164f6a3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:updateMovieRequest>\r
+         <!--Optional:-->\r
+         <web:movie>\r
+            <web:id>?</web:id>\r
+            <web:title>?</web:title>\r
+            <web:description>?</web:description>\r
+            <web:releaseDate>?</web:releaseDate>\r
+            <web:availableOnDvd>?</web:availableOnDvd>\r
+         </web:movie>\r
+      </web:updateMovieRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/updateMovieRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
