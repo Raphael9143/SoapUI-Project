@@ -1,0 +1,62 @@
+Status: OK
+Time Taken: 17
+Size: 449
+Timestamp: Sat May 10 14:54:07 ICT 2025
+TestStep: add
+
+----------------- Messages ------------------------------
+
+----------------- Properties ------------------------------
+Endpoint: http://localhost:8080/ws
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : ""
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.5.5 (Java/17.0.12)
+Host : localhost:8080
+Accept-Encoding : gzip,deflate
+Content-Length : 545
+Content-Type : text/xml;charset=UTF-8
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:addMovieRequest>
+         <!--Optional:-->
+         <web:movie>
+            <web:title>End Game</web:title>
+            <web:description>?</web:description>
+            <web:releaseDate>2000</web:releaseDate>
+            <web:availableOnDvd>?</web:availableOnDvd>
+         </web:movie>
+      </web:addMovieRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+---------------- Response --------------------------
+Response Headers: SOAPAction : ""
+Keep-Alive : timeout=60
+Accept : text/xml, text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection : keep-alive
+#status# : HTTP/1.1 200 
+Content-Length : 449
+Date : Sat, 10 May 2025 07:54:07 GMT
+Content-Type : text/xml;charset=utf-8
+
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:addMovieResponse xmlns:ns2="http://jonclarke.dev/movies/web-service">
+         <ns2:movie>
+            <ns2:id>4</ns2:id>
+            <ns2:title>End Game</ns2:title>
+            <ns2:description>?</ns2:description>
+            <ns2:availableOnDvd>false</ns2:availableOnDvd>
+         </ns2:movie>
+         <ns2:message>Movie added successfully</ns2:message>
+      </ns2:addMovieResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
