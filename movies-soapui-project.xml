@@ -25,7 +25,7 @@
   <con:entry key="Environment" value="Default"/>
   <con:entry key="Coverage Report" value="false"/>
   <con:entry key="Enable UI" value="false"/>
-  <con:entry key="Root Folder" value="D:\HA\UET\Kiem_thu\New folder"/>
+  <con:entry key="Root Folder" value="D:\HA\UET\Kiem_thu\SoapUI-Project\soap-report"/>
   <con:entry key="Ignore Errors" value="true"/>
   <con:entry key="Domain" value=""/>
   <con:entry key="Tool Args" value=""/>
@@ -228,7 +228,7 @@
       <soap:address location="http://localhost:8080/ws"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="9ab77613-9440-48d3-9be4-6e85c546ff30" isOneWay="false" action="" name="addMovie" bindingOperationName="addMovie" type="Request-Response" outputName="addMovieResponse" inputName="addMovieRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d379bb23-5630-4bb7-8c1c-887072a8a2ff" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://HAnguyen:8088/mockMoviesPortSoap11</con:endpoint><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="9ab77613-9440-48d3-9be4-6e85c546ff30" isOneWay="false" action="" name="addMovie" bindingOperationName="addMovie" type="Request-Response" outputName="addMovieResponse" inputName="addMovieRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d379bb23-5630-4bb7-8c1c-887072a8a2ff" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://HAnguyen:8088/mockMoviesPortSoap11</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <web:addMovieRequest>\r
@@ -236,7 +236,7 @@
          <web:movie>\r
             <web:title>End Game</web:title>\r
             <web:description></web:description>\r
-<!--            <web:releaseDate>2019-01-01T01:10:10</web:releaseDate>\r-->
+            <web:releaseDate>2019-01-01T01:10:10</web:releaseDate>\r
             <web:availableOnDvd>fal</web:availableOnDvd>\r
          </web:movie>\r
       </web:addMovieRequest>\r
@@ -248,14 +248,14 @@
          <web:id>23</web:id>\r
       </web:deleteMovieRequest>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/deleteMovieRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c51538f0-fc1c-4bbc-b709-58a059f07812" isOneWay="false" action="" name="getMovie" bindingOperationName="getMovie" type="Request-Response" outputName="getMovieResponse" inputName="getMovieRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cd88e217-a272-4af9-8c26-ecdf82929d22" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/deleteMovieRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c51538f0-fc1c-4bbc-b709-58a059f07812" isOneWay="false" action="" name="getMovie" bindingOperationName="getMovie" type="Request-Response" outputName="getMovieResponse" inputName="getMovieRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cd88e217-a272-4af9-8c26-ecdf82929d22" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://HAnguyen:8088/mockMoviesPortSoap11</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <web:getMovieRequest>\r
          <web:id>1</web:id>\r
       </web:getMovieRequest>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/getMovieRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0ec7f941-ce84-4552-9052-baeea56125ef" isOneWay="false" action="" name="listMovies" bindingOperationName="listMovies" type="Request-Response" outputName="listMoviesResponse" inputName="listMoviesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="74d0ca6d-eb50-4527-bcde-11d93b4a5788" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/getMovieRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0ec7f941-ce84-4552-9052-baeea56125ef" isOneWay="false" action="" name="listMovies" bindingOperationName="listMovies" type="Request-Response" outputName="listMoviesResponse" inputName="listMoviesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="74d0ca6d-eb50-4527-bcde-11d93b4a5788" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://HAnguyen:8088/mockMoviesPortSoap11</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <web:listMoviesRequest/>\r
@@ -286,7 +286,14 @@
 //web:getMovieResponse/web:movie/web:title</path><content>Movie 1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="245e1504-e1c5-4881-bfd5-73b5a0ff1686" name="XPath Match 2"><con:configuration><path>declare namespace web='http://jonclarke.dev/movies/web-service'
 //web:getMovieResponse/web:movie/web:description</path><content>Movie 1 Description</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="08d0c74f-aac1-45a1-9d70-43e5def9b471" name="XPath Match 3"><con:configuration><path>declare namespace web='http://jonclarke.dev/movies/web-service'
 //web:getMovieResponse/web:movie/web:releaseDate</path><content>2023-01-01T01:10:10</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="81e2945f-bec3-43a0-b665-3209acfa1feb" name="XPath Match 4"><con:configuration><path>declare namespace web='http://jonclarke.dev/movies/web-service'
-//web:getMovieResponse/web:movie/web:availableOnDvd</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0112c79a-8506-4cb1-928f-2354eee322fb" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 2" searchProperties="true"><con:settings/><con:testStep type="request" name="get" id="ed9e24a9-d191-41e4-aff1-b5438fbd8f89"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MoviesPortSoap11</con:interface><con:operation>getMovie</con:operation><con:request name="get" id="184d4db2-b183-4460-a4bd-ca86072e7dce"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
+//web:getMovieResponse/web:movie/web:availableOnDvd</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="02d2e571-aa2f-4c99-a651-a1a49502474a" name="getMovie - Response 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MoviesPortSoap11</con:interface><con:operation>getMovie</con:operation><con:request name="getMovie - Response 1" id="f9bc2b33-f311-49b1-9bab-f1daccefc0b8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://HAnguyen:8080/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:getMovieRequest>\r
+         <web:id>?</web:id>\r
+      </web:getMovieRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="465c13f3-322f-4f10-9fd2-a0c6d012ee50" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://jonclarke.dev/movies/web-service/MoviesPort/getMovieRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0112c79a-8506-4cb1-928f-2354eee322fb" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 2" searchProperties="true"><con:settings/><con:testStep type="request" name="get" id="ed9e24a9-d191-41e4-aff1-b5438fbd8f89"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MoviesPortSoap11</con:interface><con:operation>getMovie</con:operation><con:request name="get" id="184d4db2-b183-4460-a4bd-ca86072e7dce"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <web:getMovieRequest>\r
@@ -472,4 +479,77 @@ assert ids.containsAll([1, 2]) : "Expected IDs 1 and 2, but got ${ids}"
       </web:getMovieRequest>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="56dce7a7-02d4-408e-a3d1-325ed5e7df41"/><con:assertion type="XPath Match" id="ed569257-389c-42f8-a323-c597cada0a5e" name="XPath Match"><con:configuration><path>declare namespace web='http://jonclarke.dev/movies/web-service'
-//web:getMovieResponse/web:message</path><content>Movie not found</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+//web:getMovieResponse/web:message</path><content>Movie not found</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService id="4c0eff35-e59d-473b-96c7-405b4d4f69a0" port="8088" path="/mockMoviesPortSoap11" host="HAnguyen" name="MoviesPortSoap11 MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="addMovie" id="1f300484-c9c8-4059-87c2-89f7aed1037d" interface="MoviesPortSoap11" operation="addMovie"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="7f9bcd3d-ba10-499f-bae0-022d223caae8" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:addMovieResponse>
+         <!--Optional:-->
+         <web:movie>
+            <web:id>1</web:id>
+            <web:title>ABC</web:title>
+            <web:description>dasds</web:description>
+            <web:releaseDate>ff</web:releaseDate>
+            <web:availableOnDvd>false</web:availableOnDvd>
+         </web:movie>
+         <web:message>?</web:message>
+      </web:addMovieResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/addMovieResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="deleteMovie" id="951a3f38-e26a-4530-a099-d9f4319f9f26" interface="MoviesPortSoap11" operation="deleteMovie"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="7261408c-b4ec-4afb-9794-8f6828675415" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:deleteMovieResponse>
+         <!--Optional:-->
+         <web:movie>
+            <web:id>?</web:id>
+            <web:title>?</web:title>
+            <web:description>?</web:description>
+            <web:releaseDate>?</web:releaseDate>
+            <web:availableOnDvd>?</web:availableOnDvd>
+         </web:movie>
+         <web:message>?</web:message>
+      </web:deleteMovieResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/deleteMovieResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="getMovie" id="96dd4ae4-35db-49c3-ad9b-c6cff4f7ff53" interface="MoviesPortSoap11" operation="getMovie"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="c21a5fc5-c6fd-4507-abfe-f594befaaa5c" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:getMovieResponse>
+         <!--Optional:-->
+         <web:movie>
+            <web:id>1</web:id>
+            <web:title>ivi</web:title>
+            <web:description>MKK</web:description>
+            <web:releaseDate>i</web:releaseDate>
+            <web:availableOnDvd>o</web:availableOnDvd>
+         </web:movie>
+      </web:getMovieResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/getMovieResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="listMovies" id="ae7b300a-1686-4818-945d-6dba16d62f07" interface="MoviesPortSoap11" operation="listMovies"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="08deec34-8e1a-46cc-af43-60b332f1c29a" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:listMoviesResponse>
+         <!--Zero or more repetitions:-->
+         <web:movies>
+            <web:id>?</web:id>
+            <web:title>?</web:title>
+            <web:description>?</web:description>
+            <web:releaseDate>?</web:releaseDate>
+            <web:availableOnDvd>?</web:availableOnDvd>
+         </web:movies>
+      </web:listMoviesResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/listMoviesResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="updateMovie" id="fda8d205-ce05-4008-b322-dd3a9aea31d9" interface="MoviesPortSoap11" operation="updateMovie"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="0d5df998-24c0-4d90-958a-e7d06eb164c9" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:updateMovieResponse>
+         <!--Optional:-->
+         <web:movie>
+            <web:id>?</web:id>
+            <web:title>?</web:title>
+            <web:description>?</web:description>
+            <web:releaseDate>?</web:releaseDate>
+            <web:availableOnDvd>?</web:availableOnDvd>
+         </web:movie>
+         <web:message>?</web:message>
+      </web:updateMovieResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/updateMovieResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
