@@ -1,0 +1,56 @@
+Status: OK
+Time Taken: 29
+Size: 450
+Timestamp: Sat May 10 14:54:07 ICT 2025
+TestStep: delete
+
+----------------- Messages ------------------------------
+
+----------------- Properties ------------------------------
+Endpoint: http://localhost:8080/ws
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : ""
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.5.5 (Java/17.0.12)
+Host : localhost:8080
+Accept-Encoding : gzip,deflate
+Content-Length : 304
+Content-Type : text/xml;charset=UTF-8
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:deleteMovieRequest>
+         <web:id>1</web:id>
+      </web:deleteMovieRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+---------------- Response --------------------------
+Response Headers: SOAPAction : ""
+Keep-Alive : timeout=60
+Accept : text/xml, text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection : keep-alive
+#status# : HTTP/1.1 200 
+Content-Length : 450
+Date : Sat, 10 May 2025 07:54:06 GMT
+Content-Type : text/xml;charset=utf-8
+
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:deleteMovieResponse xmlns:ns2="http://jonclarke.dev/movies/web-service">
+         <ns2:movie>
+            <ns2:id>1</ns2:id>
+            <ns2:title>?</ns2:title>
+            <ns2:description>?</ns2:description>
+            <ns2:availableOnDvd>false</ns2:availableOnDvd>
+         </ns2:movie>
+         <ns2:message>Movie deleted successfully</ns2:message>
+      </ns2:deleteMovieResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

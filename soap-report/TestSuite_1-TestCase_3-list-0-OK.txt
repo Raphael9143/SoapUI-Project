@@ -1,0 +1,61 @@
+Status: OK
+Time Taken: 613
+Size: 701
+Timestamp: Sat May 10 14:54:06 ICT 2025
+TestStep: list
+
+----------------- Messages ------------------------------
+
+----------------- Properties ------------------------------
+Endpoint: http://localhost:8080/ws
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : ""
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.5.5 (Java/17.0.12)
+Host : localhost:8080
+Accept-Encoding : gzip,deflate
+Content-Length : 242
+Content-Type : text/xml;charset=UTF-8
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:listMoviesRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+---------------- Response --------------------------
+Response Headers: SOAPAction : ""
+Keep-Alive : timeout=60
+Accept : text/xml, text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection : keep-alive
+#status# : HTTP/1.1 200 
+Content-Length : 701
+Date : Sat, 10 May 2025 07:54:06 GMT
+Content-Type : text/xml;charset=utf-8
+
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:listMoviesResponse xmlns:ns2="http://jonclarke.dev/movies/web-service">
+         <ns2:movies>
+            <ns2:id>1</ns2:id>
+            <ns2:title>Movie 1</ns2:title>
+            <ns2:description>Movie 1 Description</ns2:description>
+            <ns2:releaseDate>2023-01-01T01:10:10</ns2:releaseDate>
+            <ns2:availableOnDvd>true</ns2:availableOnDvd>
+         </ns2:movies>
+         <ns2:movies>
+            <ns2:id>2</ns2:id>
+            <ns2:title>Movie 2</ns2:title>
+            <ns2:description>Movie 2 Description</ns2:description>
+            <ns2:releaseDate>2023-12-31T23:59:59</ns2:releaseDate>
+            <ns2:availableOnDvd>false</ns2:availableOnDvd>
+         </ns2:movies>
+      </ns2:listMoviesResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
