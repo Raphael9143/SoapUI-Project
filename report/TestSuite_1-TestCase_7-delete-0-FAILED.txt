@@ -1,0 +1,54 @@
+Status: FAILED
+Time Taken: 14
+Size: 91
+Timestamp: Tue May 13 08:08:03 ICT 2025
+TestStep: delete
+
+----------------- Messages ------------------------------
+[SOAP Response] error: Content is not allowed in prolog.
+[SOAP Response] Content is not allowed in prolog.
+[XPath Match] XPathContains assertion failed for path [declare namespace web='http://jonclarke.dev/movies/web-service'
+//web:deleteMovieResponse/web:message] : NullPointerException:Cannot invoke "String.length()" because "s" is null
+
+----------------- Properties ------------------------------
+Endpoint: http://localhost:8080/ws
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : ""
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.5.5 (Java/17.0.12)
+Host : localhost:8080
+Accept-Encoding : gzip,deflate
+Content-Length : 304
+Content-Type : text/xml;charset=UTF-8
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:deleteMovieRequest>
+         <web:id>1</web:id>
+      </web:deleteMovieRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+---------------- Response --------------------------
+Response Headers: Transfer-Encoding : chunked
+Keep-Alive : timeout=60
+X-Content-Type-Options : nosniff
+Connection : keep-alive
+Pragma : no-cache
+Date : Tue, 13 May 2025 01:08:03 GMT
+X-Frame-Options : DENY
+Cache-Control : no-cache, no-store, max-age=0, must-revalidate
+Vary : Origin
+Vary : Access-Control-Request-Method
+Vary : Access-Control-Request-Headers
+Expires : 0
+#status# : HTTP/1.1 404 
+X-XSS-Protection : 0
+Content-Type : application/json
+
+
+{"timestamp":"2025-05-13T01:08:03.009+00:00","status":404,"error":"Not Found","path":"/ws"}
