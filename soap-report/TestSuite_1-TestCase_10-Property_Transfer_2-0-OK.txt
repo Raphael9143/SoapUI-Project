@@ -1,0 +1,16 @@
+Status: OK
+Time Taken: 3
+Size: 0
+Timestamp: Sat May 10 14:54:07 ICT 2025
+TestStep: Property Transfer 2
+
+----------------- Messages ------------------------------
+Performed transfer [id]
+----------------------------------------------------
+id transferred [[5]] from [update.Response] to [get.Request]
+------------ source path -------------
+declare namespace web='http://jonclarke.dev/movies/web-service'
+//web:updateMovieResponse/web:movie/web:id
+------------ target path -------------
+declare namespace web='http://jonclarke.dev/movies/web-service'
+//web:getMovieRequest/web:id
