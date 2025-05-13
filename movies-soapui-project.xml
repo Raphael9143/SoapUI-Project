@@ -228,7 +228,7 @@
       <soap:address location="http://localhost:8080/ws"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://HAnguyen:8088/mockMoviesPortSoap11</con:endpoint><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="9ab77613-9440-48d3-9be4-6e85c546ff30" isOneWay="false" action="" name="addMovie" bindingOperationName="addMovie" type="Request-Response" outputName="addMovieResponse" inputName="addMovieRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d379bb23-5630-4bb7-8c1c-887072a8a2ff" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://HAnguyen:8088/mockMoviesPortSoap11</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://HAnguyen:8088/mockMoviesPortSoap11</con:endpoint><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="9ab77613-9440-48d3-9be4-6e85c546ff30" isOneWay="false" action="" name="addMovie" bindingOperationName="addMovie" type="Request-Response" outputName="addMovieResponse" inputName="addMovieRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d379bb23-5630-4bb7-8c1c-887072a8a2ff" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/mockMoviesPortSoap11</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <web:addMovieRequest>\r
@@ -400,7 +400,7 @@ assert ids.containsAll([1, 2]) : "Expected IDs 1 and 2, but got ${ids}"
    <soapenv:Header/>
    <soapenv:Body>
       <web:getMovieRequest>
-         <web:id>7</web:id>
+         <web:id>3</web:id>
       </web:getMovieRequest>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="a99b651f-9f29-492a-a2f1-1febddc00d0e"/><con:assertion type="XPath Match" id="6882858f-2886-414f-a154-b621222596b1" name="XPath Match"><con:configuration><path>declare namespace web='http://jonclarke.dev/movies/web-service'
@@ -410,7 +410,7 @@ assert ids.containsAll([1, 2]) : "Expected IDs 1 and 2, but got ${ids}"
       <web:addMovieRequest>\r
          <!--Optional:-->\r
          <web:movie>\r
-            <web:title>?</web:title>\r
+            <web:title>abc</web:title>\r
             <web:description>?</web:description>\r
             <web:releaseDate>2000</web:releaseDate>\r
             <web:availableOnDvd>?</web:availableOnDvd>\r
@@ -426,7 +426,7 @@ assert ids.containsAll([1, 2]) : "Expected IDs 1 and 2, but got ${ids}"
       <web:updateMovieRequest>
          <!--Optional:-->
          <web:movie>
-            <web:id>12</web:id>
+            <web:id>5</web:id>
             <web:title>${#TestCase#newTitle}</web:title>
             <web:description>?</web:description>
             <web:releaseDate>2000</web:releaseDate>
@@ -441,7 +441,7 @@ assert ids.containsAll([1, 2]) : "Expected IDs 1 and 2, but got ${ids}"
    <soapenv:Header/>
    <soapenv:Body>
       <web:getMovieRequest>
-         <web:id>12</web:id>
+         <web:id>5</web:id>
       </web:getMovieRequest>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="536476fb-0b43-4231-b16c-e1f637849db6"/><con:assertion type="XPath Match" id="873a4f42-fea2-4e3e-a2a7-c474a68a4080" name="XPath Match"><con:configuration><path>declare namespace web='http://jonclarke.dev/movies/web-service'
@@ -491,7 +491,7 @@ assert ids.containsAll([1, 2]) : "Expected IDs 1 and 2, but got ${ids}"
             <web:releaseDate>ff</web:releaseDate>
             <web:availableOnDvd>false</web:availableOnDvd>
          </web:movie>
-         <web:message>?</web:message>
+         <web:message>abcdef</web:message>
       </web:addMovieResponse>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jonclarke.dev/movies/web-service/MoviesPort/addMovieResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="deleteMovie" id="951a3f38-e26a-4530-a099-d9f4319f9f26" interface="MoviesPortSoap11" operation="deleteMovie"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="7261408c-b4ec-4afb-9794-8f6828675415" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://jonclarke.dev/movies/web-service">
